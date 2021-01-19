@@ -9,6 +9,9 @@ console.log(`Building project, "${project.name}"...`)
 const Command = require('commander').Command
 const program = new Command()
 
+const appname = 'main'
+const controller_postfix = '_controller'
+
 var edited = 0
 var copied = 0
 
@@ -187,7 +190,26 @@ program
   .description('build special comments from source directory to target directory')
   .action((source, target) => build(source, target))
 
+program
+  .command('gen <name> <url>')
+  .description('create a new component')
+  .action((name, url) => generate(name, url))
+
 program.parse(process.argv)
+
+function generate(name, url) {
+  console.log(`Generating component "${name}" at "${url}"...`)
+
+  // ! the relative path to the components folder is unfortunately hard coded here...
+  let target = `${path.resolve('./src/components')}\\${name}`
+  if (fs.existsSync(target)) {
+    console.log(`Component "${name}" already exists!`)
+    return
+  }
+  // create component structure
+  fs.outputFileSync(`${target}\\index.js`, require('./lib/index')(appname, name, url, controller_postfix))
+  fs.outputFileSync(`${target}\\${name}.html`, require('./lib/html')(name))
+}
 
 /**
  * Build - evokes the source folder js files and copies any new files to target build folder

@@ -4,7 +4,7 @@ Developer notes on Morphmaster Web - completed features, todo roadmap, etc.
 
 ## TODO
 
-❓ Refactor evoke script for usage with the web.
+✅ Refactor evoke script for usage with the web.
 
 * controllers
 * filters

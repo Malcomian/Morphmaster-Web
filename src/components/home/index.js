@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   angular.module('main').controller('home_controller', function ($scope, $rootScope) {
-    // ! INSERT ! //
+    /*+++*/
     // var vm = $scope
     // var root = $rootScope
-    // ! END-INSERT ! //
-    // ! REMOVE ! //
+    /*...*/
+    /*---*/
     var vm = {}
     var root = require('../../index')
-    // ! END-REMOVE ! //
+    /*...*/
 
     root.set_location('home');
   })
