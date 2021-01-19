@@ -17,14 +17,19 @@
 </head>
 
 <body>
-  <div class="bg-dark py-2 text-light">
+  <div class="bg-dark py-2 text-light sticky-top">
     <div class="container">
-      <div id="navbar" ng-include="'./components/home/navbar.html'"></div>
+      <div id="navbar" ng-include="'./templates/navbar.html'"></div>
     </div>
   </div>
-  <div id="main" ng-style="{'min-height': '100vh', 'overflow-y': 'scroll'}">
+  <div id="main" ng-style="{'min-height': 'calc(100vh - 39px)'}">
     <div class="container">
       <div id="view" ng-view></div>
+    </div>
+  </div>
+  <div class="pt-3 pb-5 bg-light">
+    <div class="container">
+      <div id="footer" ng-include="'./templates/footer.html'"></div>
     </div>
   </div>
 </body>

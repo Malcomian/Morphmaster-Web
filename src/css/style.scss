@@ -169,33 +169,31 @@ $font-family-base: font(sans);
 // ! angular animate is breaking ng-if -- fall back to no tweening animations
 
 body {
-  background-color: transparent;
-  overflow: hidden;
   animation-name: fadeIn;
   animation-delay: 0.5s;
   animation-duration: 0.5s;
   animation-fill-mode: both;
 }
 
-body > .ng-enter {
+#view.ng-enter {
   // transition-delay: 0.5s;
   animation: fadeIn;
   animation-duration: 0.25s;
   opacity: 0;
 }
 
-body > .ng-enter-active {
+#view.ng-enter-active {
   opacity: 1;
 }
 
-body > .ng-leave {
+#view.ng-leave {
   // transition-delay: 0.5s;
   animation: fadeOut;
   animation-duration: 0s;
   opacity: 1;
 }
 
-body > .ng-leave-active {
+#view.ng-leave-active {
   opacity: 0;
 }
 

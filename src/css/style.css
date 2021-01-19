@@ -10942,8 +10942,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 body {
-  background-color: transparent;
-  overflow: hidden;
   -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
   -webkit-animation-delay: 0.5s;
@@ -10954,7 +10952,7 @@ body {
           animation-fill-mode: both;
 }
 
-body > .ng-enter {
+#view.ng-enter {
   -webkit-animation: fadeIn;
           animation: fadeIn;
   -webkit-animation-duration: 0.25s;
@@ -10962,11 +10960,11 @@ body > .ng-enter {
   opacity: 0;
 }
 
-body > .ng-enter-active {
+#view.ng-enter-active {
   opacity: 1;
 }
 
-body > .ng-leave {
+#view.ng-leave {
   -webkit-animation: fadeOut;
           animation: fadeOut;
   -webkit-animation-duration: 0s;
@@ -10974,7 +10972,7 @@ body > .ng-leave {
   opacity: 1;
 }
 
-body > .ng-leave-active {
+#view.ng-leave-active {
   opacity: 0;
 }
 

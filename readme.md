@@ -139,6 +139,7 @@ project_name/           root project folder
     css/                css folder contains source and compiled scss
     img/                images
     js/                 javascript models and app info
+    templates/          various html templates
     index.html          main index html file
     index.js            main js file for defining the base angular app
   notes.md              development notes
