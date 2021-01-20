@@ -4,6 +4,10 @@ Developer notes on Morphmaster Web - completed features, todo roadmap, etc.
 
 ## TODO
 
+❓ Refactor gen command to have an optional URL, in which case no controller or route will be assigned to it.
+
+❓ Perhaps refactor the component generation commands to include all types of components. All js files in the component folder will be bundled into a single index.js file at build. (might not be a great idea, tbh)
+
 ✅ Refactor evoke script for usage with the web.
 
 * controllers
