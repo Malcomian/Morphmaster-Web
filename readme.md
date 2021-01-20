@@ -1,4 +1,4 @@
-# Morphmaster Web
+# Morphmaster-Web
 
 A special framework for building single page web applications with AngularJS and Bootstrap on Windows.
 
