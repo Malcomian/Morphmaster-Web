@@ -21,5 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     /*...*/
 
     root.set_location('home');
+
+    $('#home').html(root.md('./components/home/home.md'))
+    $('a[href="https://github.com/Malcomian/Morphmaster-Web"]').attr('target', '_blank')
   })
 })
