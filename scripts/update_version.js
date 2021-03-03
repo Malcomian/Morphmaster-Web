@@ -31,11 +31,11 @@ if (arg == 'major') {
   minor = 0
 };
 if (arg == 'set') {
-  console.log('setting version...')
+  console.log('Setting version...')
   let set = process.argv.slice(2)[1]
   let parts = set.split('.')
   if (parts.length != 3) {
-    console.log(`cannot set version number, "${set}"! Try "set <major>.<minor>.<patch>"!`)
+    console.log(`Cannot set version number, "${set}"! Try "set <major>.<minor>.<patch>"!`)
     return
   }
   major = Number(parts[0])
@@ -62,11 +62,7 @@ dirname.pop()
 dirname = dirname.join('\\')
 var target = path.join(dirname, `package.json`)
 
-const beautify = require('js-beautify').js
-
-var result = beautify(JSON.stringify(package), {
-  indent_size: 2
-})
+var result = JSON.stringify(package, null, 2)
 
 fs.writeFileSync(target, result)
 

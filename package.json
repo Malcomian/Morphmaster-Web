@@ -5,22 +5,23 @@
   "author": "Malcolm Wyatt-Mair",
   "scripts": {
     "evoke": "node ./scripts/evoke.js",
-    "build": "node ./scripts/evoke.js build \"./src\" \"./build\"",
+    "build": "npm run evoke \"reinclude\" \"./src\" \"./build\" && npx abjure build \"./src\" \"./build\"",
     "gen": "node ./scripts/evoke.js gen",
-    "add": "node ./scripts/evoke.js add",
-    "watch": "node ./scripts/watch.js \"./src\"",
-    "zip": "node ./scripts/zip.js",
+    "watch": "npx chokidar \"./src\" -c \"npm run build\"",
+    "zip": "npx zipadeedoodah -o \"../<cwd>_<timestamp>\" -g \"*/**\" \"*.*\" -d -l 9 -i \"node_modules/**\" \".git/**\" \".gitignore\" \"build/**\"",
     "morph": "node ./scripts/morph.js",
     "update-version": "node ./scripts/update_version.js"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3",
-    "chokidar": "^3.4.3",
-    "commander": "^6.2.1",
-    "fs-extra": "^9.0.1",
-    "js-beautify": "^1.13.0"
+    "bootstrap": "^4.6.0",
+    "commander": "^7.1.0",
+    "fs-extra": "^9.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "abjure": "^0.0.7",
+    "chokidar-cli": "^2.1.0",
+    "zipadeedoodah": "^0.0.11"
+  },
   "keywords": [
     "AngularJS",
     "Bootstrap",
