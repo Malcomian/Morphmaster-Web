@@ -8,7 +8,7 @@
     "build": "npm run evoke \"reinclude\" \"./src\" \"./build\" && npx abjure build \"./src\" \"./build\"",
     "gen": "node ./scripts/evoke.js gen",
     "watch": "npx chokidar \"./src\" -c \"npm run build\"",
-    "zip": "npx zipadeedoodah -o \"../<cwd>_<timestamp>\" -g \"*/**\" \"*.*\" -d -l 9 -i \"node_modules/**\" \".git/**\" \".gitignore\" \"build/**\"",
+    "zip": "npx zipadeedoodah -o \"../<cwd>_<timestamp>\" -g \"*/**\" \"*.*\" -d -l 9 -i \"node_modules/**\" \".git/**\" \"build/**\"",
     "morph": "node ./scripts/morph.js",
     "update-version": "node ./scripts/update_version.js"
   },
