@@ -18,7 +18,7 @@
     "fs-extra": "^9.0.1"
   },
   "devDependencies": {
-    "abjure": "^0.0.7",
+    "abjure": "^0.0.8",
     "chokidar-cli": "^2.1.0",
     "zipadeedoodah": "^0.0.11"
   },
