@@ -1,6 +1,6 @@
 # Notes
 
-Developer notes on Morphmaster Web - completed features, todo roadmap, etc.
+Developer notes on Morphmaster Web - completed features, todo roadmap, nonsense from other projects, etc.
 
 ## TODO
 
