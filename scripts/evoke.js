@@ -31,14 +31,14 @@ function generate(name, url) {
   console.log(`Generating component "${name}" at "${url}"...`)
 
   // ! the relative path to the components folder is unfortunately hard coded here...
-  let target = `${path.resolve('./src/components')}\\${name}`
+  let target = path.resolve(`./src/components/${name}`)
   if (fs.existsSync(target)) {
     console.log(`Component "${name}" already exists!`)
     return
   }
   // create component structure
-  fs.outputFileSync(`${target}\\index.js`, require('./lib/index')(appname, name, url, controller_postfix))
-  fs.outputFileSync(`${target}\\${name}.html`, require('./lib/html')(name))
+  fs.outputFileSync(path.resolve(`${target}/index.js`), require('./lib/index')(appname, name, url, controller_postfix))
+  fs.outputFileSync(path.resolve(`${target}/${name}.html`), require('./lib/html')(name))
   end()
 }
 

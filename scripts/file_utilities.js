@@ -44,9 +44,9 @@ class Tree {
     })
     dirents.forEach((dirent) => {
       if (dirent.isDirectory()) {
-        tree.push(new Branch(dirent.name, `${dir}\\${dirent.name}`, depth, true, false, this.grow(`${dir}\\${dirent.name}`, depth + 1)))
+        tree.push(new Branch(dirent.name, path.resolve(`${dir}/${dirent.name}`), depth, true, false, this.grow(path.resolve(`${dir}/${dirent.name}`), depth + 1)))
       } else if (dirent.isFile()) {
-        tree.push(new Branch(dirent.name, `${dir}\\${dirent.name}`, depth, false, true, {}))
+        tree.push(new Branch(dirent.name, path.resolve(`${dir}/${dirent.name}`), depth, false, true, {}))
       }
     })
     return tree
@@ -72,10 +72,10 @@ function get_files(dir) {
   dirents.forEach((dirent) => {
     if (dirent.isDirectory()) {
       // console.log(`--recursion--`)
-      files = files.concat(get_files(`${dir}\\${dirent.name}`))
+      files = files.concat(get_files(path.resolve(`${dir}/${dirent.name}`)))
     } else if (dirent.isFile()) {
       // console.log(`...Adding ${dirent.name}...`)
-      files.push(`${dir}\\${dirent.name}`)
+      files.push(path.resolve(`${dir}/${dirent.name}`))
     }
   })
   return files
@@ -94,9 +94,9 @@ function get_tree(dir, depth) {
   })
   dirents.forEach((dirent) => {
     if (dirent.isDirectory()) {
-      tree.push(new Branch(dirent.name, `${dir}\\${dirent.name}`, depth, true, false, get_tree(`${dir}\\${dirent.name}`, depth + 1)))
+      tree.push(new Branch(dirent.name, path.resolve(`${dir}/${dirent.name}`), depth, true, false, get_tree(path.resolve(`${dir}/${dirent.name}`), depth + 1)))
     } else if (dirent.isFile()) {
-      tree.push(new Branch(dirent.name, `${dir}\\${dirent.name}`, depth, false, true, {}))
+      tree.push(new Branch(dirent.name, path.resolve(`${dir}/${dirent.name}`), depth, false, true, {}))
     }
   })
   return tree
@@ -107,5 +107,5 @@ function get_tree(dir, depth) {
  * @param {String} source full path of directory
  */
 function get_filename(dir) {
-  return dir.split('\\').pop()
+  return dir.split(path.sep).pop()
 }
