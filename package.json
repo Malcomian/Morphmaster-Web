@@ -8,6 +8,7 @@
     "build": "npx abjure build \"./src\" \"./build\" && npm run evoke \"reinclude\" \"./src\" \"./build\"",
     "gen": "node ./scripts/evoke.js gen",
     "watch": "npx chokidar \"./src\" -c \"npm run build\"",
+    "sass": "npx sass --watch ./src/css/style.scss ./src/css/style.css",
     "zip": "npx zipadeedoodah -o \"../<cwd>_<timestamp>\" -g \"*/**\" \"*.*\" -d -l 9 -i \"node_modules/**\" \".git/**\" \"build/**\" -p",
     "morph": "node ./scripts/morph.js",
     "update-version": "node ./scripts/update_version.js"
@@ -17,6 +18,7 @@
     "chokidar-cli": "^2.1.0",
     "commander": "^7.2.0",
     "fs-extra": "^10.0.0",
+    "sass": "^1.32.12",
     "zipadeedoodah": "^1.0.1"
   },
   "keywords": [
