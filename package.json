@@ -8,19 +8,16 @@
     "build": "npx abjure build \"./src\" \"./build\" && npm run evoke \"reinclude\" \"./src\" \"./build\"",
     "gen": "node ./scripts/evoke.js gen",
     "watch": "npx chokidar \"./src\" -c \"npm run build\"",
-    "zip": "npx zipadeedoodah -o \"../<cwd>_<timestamp>\" -g \"*/**\" \"*.*\" -d -l 9 -i \"node_modules/**\" \".git/**\" \"build/**\"",
+    "zip": "npx zipadeedoodah -o \"../<cwd>_<timestamp>\" -g \"*/**\" \"*.*\" -d -l 9 -i \"node_modules/**\" \".git/**\" \"build/**\" -p",
     "morph": "node ./scripts/morph.js",
     "update-version": "node ./scripts/update_version.js"
   },
-  "dependencies": {
-    "bootstrap": "^4.6.0"
-  },
   "devDependencies": {
-    "abjure": "^0.0.10",
+    "abjure": "^0.0.11",
     "chokidar-cli": "^2.1.0",
     "commander": "^7.2.0",
-    "fs-extra": "^9.1.0",
-    "zipadeedoodah": "^0.0.13"
+    "fs-extra": "^10.0.0",
+    "zipadeedoodah": "^1.0.1"
   },
   "keywords": [
     "AngularJS",
@@ -30,5 +27,8 @@
     "morphmaster",
     "morph"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.0"
+  }
 }
