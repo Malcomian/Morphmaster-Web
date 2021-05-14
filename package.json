@@ -5,7 +5,7 @@
   "author": "Malcolm Wyatt-Mair",
   "scripts": {
     "evoke": "node ./scripts/evoke.js",
-    "build": "npx abjure build \"./src\" \"./build\" && npm run evoke \"reinclude\" \"./src\" \"./build\"",
+    "build": "npx abjure -l build \"./src\" \"./build\" && npm run evoke \"reinclude\" \"./src\" \"./build\"",
     "gen": "node ./scripts/evoke.js gen",
     "watch": "npx chokidar \"./src\" -c \"npm run build\"",
     "sass": "npx sass --watch ./src/css/style.scss ./src/css/style.css",
@@ -14,11 +14,12 @@
     "update-version": "node ./scripts/update_version.js"
   },
   "devDependencies": {
-    "abjure": "^0.0.12",
+    "abjure": "^0.1.0",
+    "bootstrap": "^5.0.1",
     "chokidar-cli": "^2.1.0",
     "commander": "^7.2.0",
     "fs-extra": "^10.0.0",
-    "sass": "^1.32.12",
+    "sass": "^1.32.13",
     "zipadeedoodah": "^1.0.1"
   },
   "keywords": [
@@ -29,8 +30,5 @@
     "morphmaster",
     "morph"
   ],
-  "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^5.0.0"
-  }
+  "license": "ISC"
 }
