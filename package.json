@@ -14,12 +14,12 @@
     "update-version": "node ./scripts/update_version.js"
   },
   "devDependencies": {
-    "abjure": "^0.1.0",
+    "abjure": "^0.1.1",
     "bootstrap": "^5.0.1",
     "chokidar-cli": "^2.1.0",
     "commander": "^7.2.0",
     "fs-extra": "^10.0.0",
-    "sass": "^1.32.13",
+    "sass": "^1.34.1",
     "zipadeedoodah": "^1.0.2"
   },
   "keywords": [
